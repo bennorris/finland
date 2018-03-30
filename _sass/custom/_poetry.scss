@@ -1,0 +1,62 @@
+$poetryBackground: #E2E2E2;
+$poetrySpacing: 24px;
+
+.intro__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .intro__image--left {
+    padding: 24px;
+    width: 40%;
+    background-color: $barely_green;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .intro__quote--right {
+    padding: 24px;
+    width: 48%;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 40px;
+    background-color: $soft_green;
+    .fa-quote-left, .fa-quote-right {
+      font-size: 35px;
+    }
+  }
+
+}
+
+.intro__text {
+    margin-top: 24px;
+}
+
+
+.poem-container {
+  font-family: 'Overpass Mono', monospace;
+  background-color: $barely_green;
+  padding: $poetrySpacing;
+  margin: $poetrySpacing 0px;
+
+  .language-options {
+    display: flex;
+    justify-content: flex-end;
+
+    button.english-language, button.finnish-language {
+      background-color: $barely_green;
+      border: none;
+      img {
+        max-width: 35px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
