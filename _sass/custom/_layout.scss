@@ -6,5 +6,48 @@
 .image__container {
   display: flex;
   flex-direction: column;
-  
+}
+
+.carousel__container  {
+  .carousel__image {
+    img {
+      max-width: 100%;
+      padding: 20px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+// slick slider overrides
+//
+// .slick-next:before, .slick-prev:before {
+//   color: $forest_green;
+//   font-size: 40px;
+// }
+
+.slick-prev:before {
+  content: "\f060";
+  font-family: FontAwesome;
+  color: $forest_green;
+  font-size: 50px;
+}
+
+.slick-next:before {
+  content: "\f061";
+  font-family: FontAwesome;
+  color: $forest_green;
+  font-size: 50px;
+}
+
+.slick-prev {
+  left: -60px;
+  width: auto;
+  height: auto;
+}
+
+.slick-next {
+  right: -60px;
+  width: auto;
+  height: auto;
 }
