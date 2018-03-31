@@ -180,6 +180,10 @@
  */
 .page-content {
   padding: $spacing-unit 0;
+
+  &--flush-top {
+    padding-top: 0;
+  }
 }
 
 .page-heading {

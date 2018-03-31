@@ -1,8 +1,41 @@
 ---
-layout: default
+layout: no_wrap
 ---
 
 <div class="home">
+  <div class="home__top">
+    <div class="typewriter">
+      <h1>EXPLORATIONS IN</h1>
+      <h1>FINNISH CULTURE.</h1>
+    </div>
+  </div>
+
+  <div class="home__media">
+    <div class="start__exploring">
+      <h1>START EXPLORING</h1>
+    </div>
+    <div class="media__options">
+        <div class="media__item media__item--music">
+          <i class="fas fa-headphones"></i>
+          <span class="overlay">MUSIC</span>
+        </div>
+        <div class="media__item media__item--lit">
+          <i class="fas fa-book"></i>
+          <span class="overlay">LITERATURE</span>
+        </div>
+        <div class="media__item media__item--art">
+          <i class="fas fa-paint-brush"></i>
+          <span class="overlay">ART</span>
+        </div>
+        <div class="media__item media__item--film">
+          <i class="fas fa-video"></i>
+          <span class="overlay">FILM</span>
+        </div>
+      </div>
+  </div>
+
+
+
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}

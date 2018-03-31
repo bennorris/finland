@@ -1,0 +1,196 @@
+.home__top {
+  background: url('/assets/images/misc/trees-home.jpg') no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  height: 500px;
+}
+
+.typewriter {
+  @extend .wrapper;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 75px;
+
+}
+.typewriter h1 {
+  border-right: .15em solid $forest_green;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  font-size: 70px;
+  font-family: 'Bungee', cursive;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typewriter h1:nth-child(1) {
+  // width: 7.3em;
+  width: 100%;
+  -webkit-animation: type 3.5s steps(40, end),
+                      blink-caret 0.5s step-end infinite;
+  animation: type 3.5s steps(40, end),
+            blink-caret 0.5s step-end infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.typewriter h1:nth-child(2) {
+  // width: 11.5em;
+  width: 100%;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end),
+            blink-caret 0.5s step-end infinite;
+  animation: type2 3.5s steps(40, end),
+             blink-caret 0.5s step-end infinite;
+  -webkit-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid $forest_green;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid $forest_green;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid $forest_green;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid $forest_green;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $forest_green }
+}
+
+.home__media {
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .start__exploring {
+    width: 35%;
+    padding-left: 25px;
+    h1 {
+      font-size: 75px;
+      font-family: $display_font;
+    }
+  }
+
+  .media__options {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .media__item {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    margin: 25px;
+    position: relative;
+    color: white;
+    background-color: $bright_green;
+
+    // &--music {
+    //   background-color: #235789;
+    //   color: white;
+    // }
+    // &--lit {
+    //   background-color: #C1292E;
+    //   color: white;
+    // }
+    // &--art {
+    //   color: white;
+    //   background-color: #F1D302;
+    //
+    // }
+    // &--film {
+    //   background-color: #23CE6B;
+    //   color: white;
+    // }
+
+    svg {
+      font-size: 75px;
+      display: block;
+    }
+
+    .overlay {
+      display: none;
+      text-align: center;
+      background: rgba(49, 51, 46, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: 0.05em;
+      font-family: $display_font;
+    }
+
+    &:hover {
+      .overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        color: transparent;
+      }
+    }
+  }
+}
