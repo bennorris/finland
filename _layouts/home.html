@@ -37,16 +37,16 @@ layout: no_wrap
   </div>
 
 <div class="recent-posts">
-  <h1 class="homepage-header">- RECENT POSTS -</h1>
+  <h1 class="homepage-header">- LATEST POSTS -</h1>
   <div class="recent-posts__container">
   <!-- {{ content }} -->
   {%- if site.posts.size > 0 -%}
-      {%- for post in site.posts limit:6 -%}
+      {%- for post in site.posts limit:4 -%}
 
 
         <a class="" href="{{ post.url | relative_url }}">
           <div class="recent-post__card">
-            <div class="recent-post__image" style="background-image: url('{{post.display_image}}')">
+            <div class="recent-post__image" style="background-image: url('{{post.home_image}}')">
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               <div class="recent-post__date">
                 {{ post.date | date: date_format }}

@@ -5,30 +5,63 @@
   // border-top: 5px solid $forest_green;
   // border-bottom: 1px solid $forest_green;
    background-color: $forest_green;
+   width: 100%;
   // min-height: $spacing-unit * 1.865;
 
-  // Positioning context for the mobile navigation icon
-  position: relative;
+
+  position: fixed;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  z-index: 1;
+
+  @include media-query($on-palm) {
+    // Positioning context for the mobile navigation icon
+    position: relative;
+  }
+
+  .wrapper {
+    max-width: 100%;
+    text-align: center;
+
+    @include media-query($on-palm) {
+      text-align: left;
+    }
+  }
 }
 
 .site-title {
   @include relative-font-size(1.625);
-  font-weight: 300;
+  // font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
+  letter-spacing: 0.1em;
   margin-bottom: 0;
-  float: left;
+  font-family: $logo_font;
+  font-size: 50px;
+//  float: left;
   color: white;
 
-  &,
-  &:visited {
-    color: $grey-color-dark;
-    color: white;
+  &:hover {
+    text-decoration: none;
+    color: $accent_two;
   }
+
+   &,
+   &:visited {
+     color: white;
+
+     &:hover {
+       color: $accent_two;
+     }
+   }
+
+   @include media-query($on-palm) {
+     font-size: 25px;
+   }
+
 }
 
 .site-nav {
-  float: right;
+  //float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
@@ -42,10 +75,20 @@
   .page-link {
     color: white;
     line-height: $base-line-height;
+    text-transform: lowercase;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $accent_two;
+    }
+
+    @include media-query($on-palm) {
+        color: $forest_green;
     }
   }
 
@@ -219,7 +262,12 @@
  * Posts
  */
 .post-header {
+  margin-top: 140px;
   margin-bottom: $spacing-unit;
+
+  @include media-query($on-palm) {
+    margin-top: 25px;
+  }
 }
 
 .post-title {

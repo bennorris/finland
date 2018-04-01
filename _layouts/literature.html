@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  <p class="post-meta">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {{ page.date | date: date_format }}
+    </time>
+    {%- if page.author -%}
+      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+    {%- endif -%}</p>
+</header>
+
+<div class="intro__container">
+  <div class="intro__image--left">
+    <img src="{{page.lead_image}}" alt="{{page.lead_image_alt}}"/>
+  </div>
+
+  <div class="intro__quote--right">
+    <p><i class="fas fa-quote-left"></i></i> {{ page.lead_quote }} <i class="fas fa-quote-right" aria-hidden="true"></i>
+</p>
+  </div>
+</div>
+
+<div class="intro__text">
+  {{page.content}}
+</div>
+
+</h1>
+<div class="poem-container">
+  <div class="language-options">
+    {%- if page.english_text and page.finnish_text -%}
+      <button class="english-language"><img src="/assets/images/languages/english.png" alt="In English" /></button>
+      <button class="finnish-language"><img src="/assets/images/languages/finnish.png" alt="Suomeksi"></button>
+    {%- endif -%}
+  </div>
+    <div class="english-language">
+    {{page.english_text}}
+    </div>
+
+    <div class="finnish-language hidden">
+      {{page.finnish_text}}
+    </div>
+</div>
+
+{%- if page.carousel_images -%}
+<div class="carousel__container">
+  {% for image in page.carousel_images %}
+    <div class="carousel__image">
+      <img src="{{image.link}}" alt="{{image.alt}}"/>
+    </div>
+    {% endfor %}
+</div>
+{%- endif -%}
+
+<script type="text/javascript">
+  $('.carousel__container').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    });
+</script>
