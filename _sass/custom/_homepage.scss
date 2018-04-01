@@ -6,6 +6,11 @@
   height: 500px;
 }
 
+h1.homepage-header {
+  font-size: $homepage_header;
+  font-family: $display_font;
+}
+
 .typewriter {
   @extend .wrapper;
   text-align: center;
@@ -18,16 +23,16 @@
   margin: 0 auto;
   letter-spacing: 0.05em;
   font-size: 70px;
-  font-family: 'Bungee', cursive;
+  font-family: $display_font;
   white-space: nowrap;
   overflow: hidden;
 }
 .typewriter h1:nth-child(1) {
   // width: 7.3em;
   width: 100%;
-  -webkit-animation: type 3.5s steps(40, end),
+  -webkit-animation: type 2s steps(40, end),
                       blink-caret 0.5s step-end infinite;
-  animation: type 3.5s steps(40, end),
+  animation: type 2s steps(40, end),
             blink-caret 0.5s step-end infinite;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -39,10 +44,10 @@
   opacity: 0;
   -webkit-animation: type2 2s steps(40, end),
             blink-caret 0.5s step-end infinite;
-  animation: type2 3.5s steps(40, end),
+  animation: type2 2s steps(40, end),
              blink-caret 0.5s step-end infinite;
-  -webkit-animation-delay: 3.5s;
-  animation-delay: 3.5s;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -119,22 +124,26 @@
 
   .start__exploring {
     width: 35%;
-    padding-left: 25px;
+
     h1 {
-      font-size: 75px;
+      padding-left: 50px;
+      font-size: $homepage_header;
       font-family: $display_font;
+      span.one {color: $accent_one;}
+      span.two {color: $accent_two;}
     }
+
   }
 
   .media__options {
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .media__item {
-    width: 150px;
+    width: 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -144,6 +153,12 @@
     color: white;
     background-color: $bright_green;
 
+    &--one {
+      background-color: $accent_one;
+    }
+    &--two {
+      background-color: $accent_two;
+    }
     // &--music {
     //   background-color: #235789;
     //   color: white;
@@ -192,5 +207,72 @@
         color: transparent;
       }
     }
+  }
+}
+
+
+.recent-posts {
+  text-align: center;
+  background-color: $forest_green;
+  width: 100%;
+  padding: 50px 0;
+  margin: 0 auto;
+
+  h1.homepage-header {
+    color: $accent_two;
+
+  }
+
+  .recent-posts__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .recent-post__card {
+      display: flex;
+      flex-direction: column;
+      max-width: 250px;
+      padding: 25px;
+
+      .recent-post__image {
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        background: #eee no-repeat center;
+        background-size: cover;
+      }
+
+      .recent-post__title {
+        padding-top: 20px;
+
+        &:hover {
+          color: $accent_one;
+        }
+      }
+
+      .recent-post__date {
+        display: none;
+      }
+    }
+
+      a {
+        color: $accent_two;
+
+        &:hover {
+          text-decoration: none;
+
+          .recent-post__image {
+            background-color: $accent_one !important;
+            background-image: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .recent-post__date {
+            display: inline;
+            color: $accent_two;
+          }
+        }
+      }
   }
 }

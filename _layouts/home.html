@@ -12,55 +12,57 @@ layout: no_wrap
 
   <div class="home__media">
     <div class="start__exploring">
-      <h1>START EXPLORING</h1>
+      <h1 class="homepage-header"><span class="one">READ.</span><span class="two">WATCH.</span></h1>
+      <h1 class="homepage-header"><span class="two">LISTEN.</span><span class="one">LOOK.</span></h1>
+      <h1 class="homepage-header"><span class="forest-green">REPEAT.</span></h1>
     </div>
     <div class="media__options">
-        <div class="media__item media__item--music">
+        <div class="media__item media__item--one">
           <i class="fas fa-headphones"></i>
           <span class="overlay">MUSIC</span>
         </div>
-        <div class="media__item media__item--lit">
+        <div class="media__item media__item--two">
           <i class="fas fa-book"></i>
           <span class="overlay">LITERATURE</span>
         </div>
-        <div class="media__item media__item--art">
+        <div class="media__item media__item--two">
           <i class="fas fa-paint-brush"></i>
           <span class="overlay">ART</span>
         </div>
-        <div class="media__item media__item--film">
+        <div class="media__item media__item--one">
           <i class="fas fa-video"></i>
           <span class="overlay">FILM</span>
         </div>
       </div>
   </div>
 
-
-
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
+<div class="recent-posts">
+  <h1 class="homepage-header">- RECENT POSTS -</h1>
+  <div class="recent-posts__container">
+  <!-- {{ content }} -->
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+      {%- for post in site.posts limit:6 -%}
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+        <a class="" href="{{ post.url | relative_url }}">
+          <div class="recent-post__card">
+            <div class="recent-post__image" style="background-image: url('{{post.display_image}}')">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <div class="recent-post__date">
+                {{ post.date | date: date_format }}
+              </div>
+            </div>
+
+            <div class="recent-post__title">
+              {{ post.title | escape }}
+            </div>
+
+
+          </div>
+          </a>
+      {%- endfor -%}
+        </div>
+    </div>
   {%- endif -%}
 
 </div>
