@@ -152,13 +152,44 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  border-top: 5px solid $forest_green;
+
+  .wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} ));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} ));
+  }
+
+  a {
+    color: $forest_green;
+
+
+    &:hover {
+      color: $accent_two;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $forest_green;
+      &:hover {
+        color: $accent_two;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .footer-heading {
   @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: 15px;
+  font-family: $logo_font;
+  color: $forest_green;
+  font-size: 30px;
+}
+
+.footer-description {
+  color: $accent_one;
+  padding-top: 5px;
 }
 
 .contact-list,
@@ -222,7 +253,7 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: $spacing-unit 0 0;
 
   &--flush-top {
     padding-top: 0;

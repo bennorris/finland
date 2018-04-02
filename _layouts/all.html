@@ -5,8 +5,7 @@ layout: no_wrap
 <div class="post-list post-list--category">
   <h1 class="category-header">* {{page.title}} POSTS *</h1>
   <div class="post-list__container">
-    {%- if site.categories[page.category] -%}
-    {% for post in site.categories[page.category] %}
+    {% for post in site.posts %}
         <a class="" href="{{ post.url | relative_url }}">
           <div class="post__card">
             <div class="post__image" style="background-image: url('{{post.home_image}}')">
@@ -24,8 +23,5 @@ layout: no_wrap
           </div>
           </a>
       {%- endfor -%}
-      {%- else -%}
-        <h3 class="post-list__placeholder">Coming soon!</h3>
-      {%- endif -%}
         </div>
     </div>

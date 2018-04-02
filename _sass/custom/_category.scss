@@ -1,0 +1,17 @@
+.post-list--category {
+  padding-top: 150px;
+
+  h1.category-header {
+    text-transform: uppercase;
+    color: $accent_two;
+    font-size: $homepage_header;
+    font-family: $display_font;
+  }
+
+  h3.post-list__placeholder {
+    color: $accent_two;
+    font-family: $display_font;
+    font-size: $homepage_header / 2;
+  }
+
+}

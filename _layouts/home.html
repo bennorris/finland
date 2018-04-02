@@ -12,48 +12,52 @@ layout: no_wrap
 
   <div class="home__media">
     <div class="start__exploring">
-      <h1 class="homepage-header"><span class="one">READ.</span><span class="two">WATCH.</span></h1>
-      <h1 class="homepage-header"><span class="two">LISTEN.</span><span class="one">LOOK.</span></h1>
+      <h1 class="homepage-header"><span class="one">READ.</span><span class="two">LISTEN.</span></h1>
+      <h1 class="homepage-header"><span class="two">WATCH.</span><span class="one">LOOK.</span></h1>
       <h1 class="homepage-header"><span class="forest-green">REPEAT.</span></h1>
     </div>
     <div class="media__options">
-        <div class="media__item media__item--one">
+      <a class="media__item media__item--one" href="/categories/literature">
+        <i class="fas fa-book"></i>
+        <span class="overlay">LITERATURE</span>
+      </a>
+
+        <a class="media__item media__item--two" href="/categories/music">
           <i class="fas fa-headphones"></i>
           <span class="overlay">MUSIC</span>
-        </div>
-        <div class="media__item media__item--two">
-          <i class="fas fa-book"></i>
-          <span class="overlay">LITERATURE</span>
-        </div>
-        <div class="media__item media__item--two">
-          <i class="fas fa-paint-brush"></i>
-          <span class="overlay">ART</span>
-        </div>
-        <div class="media__item media__item--one">
+        </a>
+
+        <a class="media__item media__item--two" href="/categories/film">
           <i class="fas fa-video"></i>
           <span class="overlay">FILM</span>
-        </div>
+        </a>
+
+        <a class="media__item media__item--one" href="/categories/art">
+          <i class="fas fa-paint-brush"></i>
+          <span class="overlay">ART</span>
+        </a>
+
       </div>
   </div>
 
-<div class="recent-posts">
+<div class="post-list">
   <h1 class="homepage-header">- LATEST POSTS -</h1>
-  <div class="recent-posts__container">
+  <div class="post-list__container">
   <!-- {{ content }} -->
   {%- if site.posts.size > 0 -%}
       {%- for post in site.posts limit:4 -%}
 
 
         <a class="" href="{{ post.url | relative_url }}">
-          <div class="recent-post__card">
-            <div class="recent-post__image" style="background-image: url('{{post.home_image}}')">
+          <div class="post__card">
+            <div class="post__image" style="background-image: url('{{post.home_image}}')">
               {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <div class="recent-post__date">
+              <div class="post__date">
                 {{ post.date | date: date_format }}
               </div>
             </div>
 
-            <div class="recent-post__title">
+            <div class="post__title">
               {{ post.title | escape }}
             </div>
 

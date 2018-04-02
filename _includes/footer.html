@@ -3,21 +3,14 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
         <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
+            <li><a href="/about">about</li>
+            <li><a class="u-email" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSenPlr7rXai7LKnagrUMdoWZ3oB-tieoDcN8lvYzGPFRgPOGw/viewform">contact</a></li>
         </ul>
       </div>
 
@@ -25,7 +18,7 @@
         {%- include social.html -%}
       </div>
 
-      <div class="footer-col footer-col-3">
+      <div class="footer-col footer-col-3 footer-description">
         <p>{{- site.description | escape -}}</p>
       </div>
     </div>

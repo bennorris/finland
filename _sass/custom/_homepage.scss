@@ -143,7 +143,7 @@ h1.homepage-header {
     justify-content: center;
   }
 
-  .media__item {
+  a.media__item {
     width: 30%;
     display: flex;
     align-items: center;
@@ -212,7 +212,7 @@ h1.homepage-header {
 }
 
 
-.recent-posts {
+.post-list {
   text-align: center;
   background-color: $forest_green;
   width: 100%;
@@ -224,18 +224,18 @@ h1.homepage-header {
 
   }
 
-  .recent-posts__container {
+  .post-list__container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
-    .recent-post__card {
+    .post__card {
       display: flex;
       flex-direction: column;
       max-width: 250px;
       padding: 25px;
 
-      .recent-post__image {
+      .post__image {
         width: 250px;
         height: 250px;
         border-radius: 100%;
@@ -243,7 +243,7 @@ h1.homepage-header {
         background-size: cover;
       }
 
-      .recent-post__title {
+      .post__title {
         padding-top: 20px;
 
         &:hover {
@@ -251,7 +251,7 @@ h1.homepage-header {
         }
       }
 
-      .recent-post__date {
+      .post__date {
         display: none;
       }
     }
@@ -262,14 +262,14 @@ h1.homepage-header {
         &:hover {
           text-decoration: none;
 
-          .recent-post__image {
+          .post__image {
             background-color: $accent_one !important;
             background-image: none !important;
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .recent-post__date {
+          .post__date {
             display: inline;
             color: $accent_two;
           }
