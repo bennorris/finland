@@ -1,0 +1,26 @@
+.music__container {
+  display: flex;
+  align-items: center;
+  background-color: $barely_green;
+  padding: 15px;
+
+  .music-img {
+    max-width: 400px;
+    margin-left: 25px;
+  }
+}
+
+.music__details {
+  background-color: $soft_green;
+  padding: 15px;
+  margin: 15px 0;
+
+  ul {
+    list-style:none;
+    margin:0;
+  }
+}
+
+.music__post {
+  margin-top: 25px;
+}

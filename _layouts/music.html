@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  <p class="post-meta">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {{ page.date | date: date_format }}
+    </time>
+</header>
+
+<div class="music__details">
+  <ul>
+  {% for item in page.lead_details %}
+    <li>{{item.title}}: {{item.content}}</li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="music__container">
+  <div class="music-embed">
+    <iframe src="{{page.iframe_embed}}"  width="300" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+  <div class="music-img">
+    <img src="{{page.lead_image}}" alt="{{page.lead_image_alt}}">
+  </div>
+</div>
+
+<div class="music__post">
+  {{page.content}}
+</div>
+
+{% if page.sources %}
+<div class="sources">
+  <h3>SOURCES</h3>
+  <ul>
+    {% for source in page.sources %}
+    {% if source.link %}
+      <li><a href="{{source.link}}" target="_blank">{{source.description}} : {{source.attribution}}</a></li>
+    {% else %}
+      <li>{{source.description}} : {{source.attribution}}</li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+</div>
+{% endif %}
